@@ -1,6 +1,7 @@
 body {
   box-sizing: border-box;
   width: 1440px;
+  /*margin: 0 auto;*/
 }
 
 .header {
@@ -85,6 +86,7 @@ main {
   background-image: url(/images/cover.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .overlay {
@@ -92,6 +94,7 @@ main {
   height: 100%;
   position: relative;
   z-index: 1;
+  background-color: rgb(0, 0, 0, 0.6);
 }
 
 .cover__title {
@@ -105,7 +108,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 165px 50px 237px 50px;
+  padding: 165px 50px 0 50px;
 }
 
 .aligned-text {
@@ -139,45 +142,48 @@ main {
   letter-spacing: 0px;
 }
 
-
-/* Разобраться с абсолютами
-(постараться поменять на флексы)*/
-
 .cover__description {
   display: flex;
-  /*padding: 147px 385px 62px 422px;*/
-  position: absolute;
-  top: 667px;
-  right: 385pёx;
-  bottom: 62px;
-  left: 422px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
 }
 
 .cover__description-text {
-  color: #FFF;
-  text-align: center;
+  box-sizing: border-box;
+  color:#FFF;
+  padding: 147px 0 0 422px;
+  font-family: Raleway;
   font-size: 22px;
+  font-style: normal;
   font-weight: 400;
-  line-height: 28px;
+  line-height: 28px; /* 127.273% */
   text-transform: uppercase;
-  word-spacing: 17.7px;
+  white-space: nowrap;
+  letter-spacing: 0;
+  word-spacing: 17px;
+}
+
+.bet_button_location {
+  box-sizing: border-box;
+  display: flex;
+  padding: 134px 50px 50px 83px;
+  white-space: nowrap;
 }
 
 .bet_button {
-  width: 257px;
-  height: 52px;
-  display: flex;
-  box-sizing: border-box;
-  position: absolute;
-  inset: 948px 50px 50px 1133px;
   color: #FFF;
-  text-align: center;
-  font-size: 22px;
-  text-transform: uppercase;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(0, 0, 0,0);
+  background-color: rgb(0, 0, 0, 0);
   border: 1px solid #fff;
+  text-align: center;
+  font-family: Raleway;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  padding: 12px 32px;
+  z-index: 2;
 }
 
 
