@@ -280,17 +280,17 @@ main {
 }
 
 .about_logo {
-display: flex;
-justify-content: center;
-align-items: center;
-width: 240px;
-height: 240px;
-border-radius: 80%;
-background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 240px;
+  height: 240px;
+  border-radius: 80%;
+  background-color: #000;
 }
 
 .about_logo-image {
-width: 62%;
+  width: 62%;
 }
 
 .about__title {
@@ -388,10 +388,6 @@ width: 62%;
   flex-direction: row;
   gap: 50px;
   list-style: none;
-}
-
-.footer__social-link {
-
 }
 
 .footer__social-icon {
