@@ -1,7 +1,12 @@
 body {
   box-sizing: border-box;
+  max-width: 1440px;
+  margin: auto;
   font-family: Raleway, sans-serif;
   font-weight: 400;
+  /*Ограничил ширину body и отцентровал
+  исходя из совета старшего студента в чате projects
+  в пачке*/
 }
 
 .header {
