@@ -1,30 +1,30 @@
 body {
   box-sizing: border-box;
   max-width: 1440px;
-  margin: auto;
-  font-family: Raleway, sans-serif;
-  font-weight: 400;
+  /*margin: auto;*/
   /*Ограничил ширину body и отцентровал
   исходя из совета старшего студента в чате projects
   в пачке*/
 }
 
-.header {
+/* Переделал header. Добавил margin, исправил padding,
+  наладил структуру расположения в ячейках grid. */
+
+  .header {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(1, 1fr);
-  padding: 92px 49px 92px 51px;
+    grid-template-columns: 1fr 148px 1fr;
+    margin: 92px 49px 92px 51px;
 }
 
 .header__menu {
-  display: flex;
-  grid-column: 1/3;
-  align-items: center;
+  grid-column: 1;
 }
 
 .header__links-list {
   display: flex;
   gap: 13px;
+  padding-top: 43px;
+  padding-bottom: 43px;
 }
 
 .header__links-list-item {
@@ -37,7 +37,7 @@ body {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 4px;
-}
+  }
 
 .header__link-active {
   text-decoration: none;
@@ -49,26 +49,28 @@ body {
 
 .header__logo {
   display: flex;
-  grid-column: 3/4;
+  grid-column: 2;
   justify-content: center;
 }
 
 .header__logo-image {
-  width: 51%;
+  max-width: 136px;
+  padding-bottom: 4px;
 }
 
 .address {
-  grid-column: 5/6;
-  padding: 5px 0 7px 28px;
-  font-size: 18px;
+  grid-column: 3;
+  justify-self: end;
+  padding: 5px 0 7px;
+  font-size: 18.3px;
   font-style: normal;
-  line-height: 24px;
+  line-height: 24.3px;
+  white-space: nowrap;
 }
 
 .header__address {
   display: block;
-  width: 100%;
-  max-width: 133px;
+  max-width: fit-content;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 4px;
@@ -99,7 +101,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 165px 50px 136px 50px;
+  padding: 165px 50px 135px 50px;
   color: #FFF;
   font-weight: 700;
   font-size: 100px;
@@ -117,51 +119,41 @@ body {
   letter-spacing: 60px;
 }
 
-.aligned-text_top {
-  letter-spacing: 30px;;
-}
+/*Удалил лишний .aligned-text_top {},
+  так как наследуется у .aligned-text*/
 
 .aligned-text_center {
   justify-content: center;
-  align-items: start;
   line-height: 100%;
 }
 
 .aligned-text_right {
-  display: flex;
   justify-content: end;
-  align-items: start;
   line-height: 100%;
-  letter-spacing: 30px;
 }
 
 .no-letter-spacing {
   letter-spacing: 0px;
 }
 
+/*Удалил лишний max-height: 52px;*/
+
 .cover__description {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
   justify-content: flex-end;
   align-items: center;
-  gap: 82px;
+  gap: 78px;
   width: 100%;
-  max-height: 52px;
   padding-right: 50px;
 }
 
 .cover__description-text {
   z-index: 2;
   color:#FFF;
-  font-weight: 400;
   font-size: 22px;
-  font-style: normal;
-  line-height: 28px; /* 127.273% */
-  letter-spacing: 0;
+  line-height: 28px;
   text-transform: uppercase;
-  word-spacing: 17px;
-  white-space: nowrap;
+  word-spacing: 18px;
 }
 
 .bet_button {
@@ -180,7 +172,7 @@ body {
 .lots {
   display: flex;
   flex-direction: column;
-  padding: 180px 50px 0px 50px;
+  margin: 180px 50px 181px 50px;
 }
 
 .lots__heading {
@@ -246,10 +238,18 @@ body {
   z-index: 4;
   color: #FFF;
   font-size: 20px;
+  line-height: 120%;
 }
 
+/* Заменил padding на margin, установил
+  максимальную ширину ссылки размером с внутреннюю
+  предпочтительную ширину, благодаря чему ссылка
+  перестала быть активной на протяжении всего блока.
+  (затем исправил везде)*/
+
 .lots__look-more-link {
-  padding: 30px 0 2px 40px;
+  max-width: fit-content;
+  margin: 30px 0 2px 40px;
   font-size: 20px;
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -261,9 +261,8 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 25px;
-  row-gap: 100px;
-  padding: 180px 50px 174px 50px;
+  column-gap: 25px;
+  margin: 0 50px 180px 50px;
 }
 
 .about__column {
@@ -290,10 +289,10 @@ body {
 
 .about__title {
   display: flex;
-  grid-column: 2/3;
-  grid-row: 1/2;
-  width: 100%;
-  height: 100%;
+  flex-direction: column;
+  grid-column: 2/4;
+  grid-row: 1/3;
+  gap: 100px;
   padding-top: 100px;
 }
 
@@ -305,49 +304,36 @@ body {
 .about__text {
   display: flex;
   flex-direction: column;
-  grid-column: 2/4;
-  grid-row: 2/4;
-  gap: 30px;
-  width: 100%;
-  height: 100%;
+  justify-content: space-between;
+  gap: 25px;
 }
 
 .about__text p {
-  font-family: Raleway;
   font-size: 20px;
-  line-height: 115%;
+  line-height: 120%;
 }
 
+/* Переделал footer по аналогии с header. При
+  изменении разрешения больше ничего не теряется*/
+
 .footer {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: start;
-  align-content: center;
-  width: 100%;
-  padding: 0 50px 90px 50px;
+  display: grid;
+  grid-template-columns: 1fr 149px 1fr;
+  justify-items: end;
+  margin: 0 50px 90px 50px;
 }
 
 .footer__address {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  width: 100%;
-  max-width: 240px;
+  justify-self: start;
 }
 
 .footer__address-item {
   display: block;
-  width: 100%;
-  max-width: 133px;
   font-style: normal;
   line-height: 24px;
   letter-spacing: 1.1px;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
   text-underline-offset: 4px;
-  white-space: nowrap;
+  max-width: fit-content;
 }
 
 .footer__address-item-bottom {
@@ -359,6 +345,8 @@ body {
 
 .footer__menu {
   display: flex;
+  grid-column: 2;
+
 }
 
 .footer__menu-list {
@@ -370,7 +358,6 @@ body {
 
 .footer__menu-list-item {
   font-size: 18px;
-  white-space: nowrap;
 }
 
 .footer__menu-link-active {
@@ -378,14 +365,11 @@ body {
 }
 
 .footer__menu-link {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
   text-underline-offset: 4px;
 }
 
 .footer__social-list-menu {
-  flex-shrink: 0;
-  width: 100%;
+  grid-column: 3;
   max-width: 240px;
 }
 
