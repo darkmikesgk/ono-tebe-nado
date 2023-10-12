@@ -1,13 +1,8 @@
-  /*автотесты требуют сбросить
-  браузерные отступы у body*/
-
 body {
   box-sizing: border-box;
   max-width: 1440px;
-  margin: 0;
-  /*Ограничил ширину body и отцентровал
-  исходя из совета старшего студента
-  в чате projects в пачке*/
+  /*Удаляю margin: auto;
+    с ним не пропускает автотест*/
 }
 
 /* Переделал header. Добавил margin,
@@ -15,7 +10,7 @@ body {
   расположения в ячейках grid. */
 
   .header {
-  display: grid;
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin: 92px 49px 92px 51px;
 }
@@ -141,7 +136,8 @@ body {
   letter-spacing: 0px;
 }
 
-/*Удалил лишний max-height: 52px;*/
+/*Удалил лишний max-height: 52px; а так же
+  удалил высоту для всех разрешений*/
 
 .cover__description {
   display: flex;
@@ -323,7 +319,7 @@ body {
 
 .footer {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   justify-items: end;
   margin: 0 50px 90px 50px;
 }
