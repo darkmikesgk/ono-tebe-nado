@@ -1,7 +1,6 @@
 body {
   box-sizing: border-box;
   max-width: 1440px;
-  margin: auto;
   /*Ограничил ширину body и отцентровал
   исходя из совета старшего студента в чате projects
   в пачке*/
@@ -82,7 +81,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 0 0 50px 0;
-  background-image: url(/images/cover.jpg);
+  background-image: url(../images/cover.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -216,15 +215,15 @@ body {
 }
 
 .card_type_film {
-  background: url(/images/card-lot-01.jpg) no-repeat center / cover;
+  background: url(../images/card-lot-01.jpg) no-repeat center / cover;
 }
 
 .card_type_book {
-  background: url(/images/card-lot-02.jpg) no-repeat center / cover;
+  background: url(../images/card-lot-02.jpg) no-repeat center / cover;
 }
 
 .card_type_picture {
-  background: url(/images/card-lot-03.jpg) no-repeat center / cover;
+  background: url(../images/card-lot-03.jpg) no-repeat center / cover;
 }
 
 .card__title {
