@@ -1,13 +1,18 @@
+  /*автотесты требуют сбросить
+  браузерные отступы у body*/
+
 body {
   box-sizing: border-box;
   max-width: 1440px;
+  margin: 0;
   /*Ограничил ширину body и отцентровал
-  исходя из совета старшего студента в чате projects
-  в пачке*/
+  исходя из совета старшего студента
+  в чате projects в пачке*/
 }
 
-/* Переделал header. Добавил margin, исправил padding,
-  наладил структуру расположения в ячейках grid. */
+/* Переделал header. Добавил margin,
+  исправил padding, наладил структуру
+  расположения в ячейках grid. */
 
   .header {
   display: grid;
@@ -329,11 +334,11 @@ body {
 
 .footer__address-item {
   display: block;
+  max-width: fit-content;
   font-style: normal;
   line-height: 24px;
   letter-spacing: 1.1px;
   text-underline-offset: 4px;
-  max-width: fit-content;
 }
 
 .footer__address-item-bottom {
