@@ -8,10 +8,10 @@ body {
   исправил padding, наладил структуру
   расположения в ячейках grid. */
 
-  .header {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin: 92px 49px 92px 51px;
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 92px 49px 92px 51px;
 }
 
 .header__menu {
@@ -36,7 +36,7 @@ body {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 4px;
-  }
+}
 
 .header__link-active {
   text-decoration: none;
@@ -101,7 +101,7 @@ body {
   flex-direction: column;
   gap: 20px;
   padding: 165px 50px 135px 50px;
-  color: #FFF;
+  color: #fff;
   font-weight: 700;
   font-size: 100px;
   font-style: normal;
@@ -150,7 +150,7 @@ body {
 
 .cover__description-text {
   z-index: 2;
-  color:#FFF;
+  color: #fff;
   font-size: 22px;
   line-height: 28px;
   text-transform: uppercase;
@@ -161,7 +161,7 @@ body {
   z-index: 2;
   border: 1px solid #fff;
   padding: 12px 32px;
-  color: #FFF;
+  color: #fff;
   font-size: 22px;
   font-style: normal;
   line-height: normal;
@@ -207,15 +207,23 @@ body {
   text-decoration: none;
 }
 
+/* Перенес центровку, повторение и размер
+  бэкграунда в родительский класс, чтобы
+  не вызывать его много раз (как советовал
+  ревьюер)*/
+
 .card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
   padding: 50px 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.card_type_film {
+/*.card_type_film {
   background: url(../images/card-lot-01.jpg) no-repeat center / cover;
 }
 
@@ -225,11 +233,23 @@ body {
 
 .card_type_picture {
   background: url(../images/card-lot-03.jpg) no-repeat center / cover;
+}*/
+
+.card_type_film {
+  background-image: url(../images/card-lot-01.jpg);
+}
+
+.card_type_book {
+  background-image: url(../images/card-lot-02.jpg);
+}
+
+.card_type_picture {
+  background-image: url(../images/card-lot-03.jpg);
 }
 
 .card__title {
   z-index: 4;
-  color:#FFF;
+  color: #fff;
   font-size: 22px;
   text-decoration-line: underline;
   text-transform: uppercase;
@@ -237,7 +257,7 @@ body {
 
 .card__text {
   z-index: 4;
-  color: #FFF;
+  color: #fff;
   font-size: 20px;
   line-height: 120%;
 }
@@ -380,4 +400,3 @@ body {
 .footer__social-icon {
   width: 104%;
 }
-
